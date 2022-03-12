@@ -1,13 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { routes } from './routes';
+import chakraConfig from './chakraConfig';
 import './App.css';
 import Navigation from './components/navigation';
 import NotFound from './views/notfound';
 
+const theme = extendTheme(chakraConfig);
+
 function App() {
     return (
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
             <>
                 <Navigation />
                 <Routes>
