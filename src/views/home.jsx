@@ -8,22 +8,22 @@ import { latestPosts } from '../data/latest';
 import useBreakpoints from '../hooks/useBreakpoints';
 
 export default function Home() {
-    const { isTablet } = useBreakpoints();
+    const { isLaptop } = useBreakpoints();
 
     const heroPosts = React.useMemo(() => {
-        if (isTablet) return latestPosts.slice(0, 2);
+        if (isLaptop) return latestPosts.slice(0, 2);
         return latestPosts.slice(0, 1);
-    }, [isTablet]);
+    }, [isLaptop]);
 
     const secondPosts = React.useMemo(() => {
-        if (isTablet) return [];
+        if (isLaptop) return [];
         return latestPosts.slice(2, 4);
-    }, [isTablet]);
+    }, [isLaptop]);
 
     const otherPosts = React.useMemo(() => {
-        if (isTablet) return latestPosts.slice(2, latestPosts.length);
+        if (isLaptop) return latestPosts.slice(2, latestPosts.length);
         return latestPosts.slice(4, latestPosts.length);
-    }, [isTablet]);
+    }, [isLaptop]);
 
     return (
         <main>
