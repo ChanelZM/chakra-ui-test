@@ -48,7 +48,7 @@ export const latestPosts = [
         description:
             'Irpin ligt onder vuur. Burgers proberen bussen te bereiken aan de rand van de stad, om te vluchten richting Kiev. maar ook tijdens hun vlucht zijn er beschietingen. Ook de cameraploeg komt in het nauw.',
         link: '/',
-        image: 'https://cdn.nos.nl/image/2022/03/06/838747/3840x2160a.jpg',
+        image: 'https://cdn.nos.nl/image/2022/03/12/840912/2880x2160a.jpg',
         type: 'video',
     },
     {

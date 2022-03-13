@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid, List, ListItem } from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
 import Container from '../components/container';
 import VerticalArticle from '../components/vertical-article';
 import ArticleCard from '../components/article-card';
@@ -41,19 +41,40 @@ export default function Home() {
                     ))}
                 </Grid>
                 {secondPosts.length > 0 && (
-                    <Grid templateColumns="repeat(2, 1fr)" gap="1.6em">
+                    <Grid
+                        templateColumns="repeat(2, 1fr)"
+                        gap="1.6em"
+                        padding="0 1.6rem 2.4rem 1.6rem"
+                    >
                         {secondPosts.map((post) => (
                             <VerticalArticle key={post.id} {...post} />
                         ))}
                     </Grid>
                 )}
-                <List>
+                <Grid
+                    as="ul"
+                    templateColumns={{
+                        base: 'repeat(1, 1fr)',
+                        lg: 'repeat(3, 1fr)',
+                    }}
+                    padding={{ base: '0 1.6rem 2.4rem 1.6rem', lg: '0' }}
+                    gap={{ lg: '3.2rem' }}
+                >
                     {otherPosts.map((post) => (
-                        <ListItem key={post.id}>
+                        <GridItem
+                            key={post.id}
+                            as="li"
+                            padding={{ base: '1.6rem 0' }}
+                            borderBottom={{
+                                base: '1px solid lightGrey',
+                                lg: 'none',
+                            }}
+                            borderColor="lightGrey"
+                        >
                             <ArticleListItem {...post} />
-                        </ListItem>
+                        </GridItem>
                     ))}
-                </List>
+                </Grid>
             </Container>
         </main>
     );

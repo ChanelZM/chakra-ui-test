@@ -1,22 +1,13 @@
-import { Heading, Box, Link, Image, Text } from '@chakra-ui/react';
+import { Heading, Box, Link } from '@chakra-ui/react';
+import ArticleType from './article-type';
+import ArticleImage from './article-image';
 
 export default function ArticleCard({ title, link, image, type }) {
     return (
-        <Box
-            as="article"
-            position="relative"
-            role="group"
-            borderRadius="0.4rem"
-            overflow="hidden"
-        >
-            <Image
-                src={image}
-                objectFit="cover"
-                width="100%"
-                height="100%"
-                transition="transform 0.2s"
-                transform="scale(1)"
-                _groupHover={{ transform: 'scale(1.05)' }}
+        <Box as="article" position="relative" role="group" overflow="hidden">
+            <ArticleImage
+                image={image}
+                borderRadius={{ base: '0', lg: '0.4rem' }}
             />
             <Box
                 position="absolute"
@@ -44,20 +35,7 @@ export default function ArticleCard({ title, link, image, type }) {
                 }}
             >
                 {(type === 'liveblog' || type === 'video') && (
-                    <Text
-                        display="inline-block"
-                        backgroundColor="red"
-                        color="white"
-                        fontSize="1.6rem"
-                        fontWeight="bold"
-                        zIndex="1"
-                        padding="0.5rem 1.2rem 0.5rem 2.5rem"
-                        marginBottom="1.2rem"
-                        lineHeight="1"
-                        borderRadius="2rem"
-                    >
-                        {type}
-                    </Text>
+                    <ArticleType type={type} />
                 )}
                 <Heading as="h1" color="white" zIndex="1">
                     <Link
