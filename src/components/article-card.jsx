@@ -32,6 +32,7 @@ export default function ArticleCard({ title, link, image, type }) {
                     zIndex: 1,
                     backgroundImage:
                         'linear-gradient(rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.7))',
+                    borderRadius: '0 0 0.4rem 0.4rem',
                 }}
             >
                 {(type === 'liveblog' || type === 'video') && (
