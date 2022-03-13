@@ -4,6 +4,7 @@ import { routes } from './routes';
 import chakraConfig from './chakraConfig';
 import './App.css';
 import Navigation from './components/navigation';
+import Footer from './components/footer';
 import NotFound from './views/notfound';
 
 const theme = extendTheme(chakraConfig);
@@ -23,6 +24,7 @@ function App() {
                     ))}
                     <Route path="*" element={<NotFound />} />
                 </Routes>
+                <Footer />
             </>
         </ChakraProvider>
     );
